@@ -1,0 +1,59 @@
+init_config:
+
+instances:
+
+  ## @param host - string - required
+  ## The hostname or IP address to connect to.
+  #
+  -  host: <HOSTNAME>
+
+  ## @param port - integer - optional - default: 443
+  ## The port to connect to. This overrides any port specified in `host`.
+  #
+  #  port: 443
+
+  ## @param host - string - optional
+  ## The path to a local certificate in lieu of a host/port. In this mode, the
+  ## service checks `tls.can_connect` and `tls.version` are unavailable.
+  #
+  #  local_cert_path: <CERT_PATH>
+
+  ## @param cert - string - optional
+  ## The path to a single file in PEM format containing a certificate as well as any
+  ## number of CA certificates needed to establish the certificate’s authenticity for
+  ## use when connecting to `host`. It may also contain an unencrypted private key to use.
+  #
+  #  cert: <CERT_PATH>
+
+  ## @param private_key - string - optional
+  ## The unencrypted private key to use for `cert` when connecting to `host`. This is
+  ## required if `cert` is set and it does not already contain a private key.
+  #
+  #  private_key: <PRIVATE_KEY_PATH>
+
+  ## @param ca_cert - string - optional
+  ## The path to a file of concatenated CA certificates in PEM format or a directory
+  ## containing several CA certificates in PEM format. If a directory, the directory
+  ## must have been processed using the c_rehash utility supplied with OpenSSL. See:
+  ## https://www.openssl.org/docs/manmaster/man3/SSL_CTX_load_verify_locations.html
+  #
+  #  ca_cert: <CA_CERT_PATH>
+
+  ## @param timeout - integer - optional - default: 10
+  ## The timeout for connecting to `host`.
+  #
+  #  timeout: 10
+
+  ## @param name - string - optional
+  ## Unique identifier for this instance that will be added as a tag.
+  #
+  #  name: <INSTANCE_NAME>
+
+  ## @param tags - list of key:value strings - optional
+  ## List of tags to attach to every metric and service check emitted by this instance.
+  ##
+  ## Learn more about tagging at https://docs.datadoghq.com/tagging
+  #
+  #  tags:
+  #    - <KEY_1>:<VALUE_1>
+  #    - <KEY_2>:<VALUE_2>
